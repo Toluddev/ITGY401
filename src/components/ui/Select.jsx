@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 
+
 export const Select = ({ children }) => {
   return <div className="relative w-full">{children}</div>;
 };
 
-export const SelectTrigger = ({ placeholder, onClick }) => {
+
+export const SelectTrigger = ({ placeholder, onClick, value }) => {
   return (
     <button
       className="w-full px-4 py-2 border rounded-md bg-white text-left focus:outline-none focus:ring"
       onClick={onClick}
     >
-      {placeholder || "Select an option"}
+      {value || placeholder || "Select an option"}
     </button>
   );
 };
+
 
 export const SelectContent = ({ isOpen, children }) => {
   if (!isOpen) return null;
@@ -23,6 +26,7 @@ export const SelectContent = ({ isOpen, children }) => {
     </div>
   );
 };
+
 
 export const SelectItem = ({ value, onSelect }) => {
   return (
@@ -35,6 +39,36 @@ export const SelectItem = ({ value, onSelect }) => {
   );
 };
 
+
 export const SelectValue = ({ value }) => {
   return <span>{value}</span>;
+};
+
+
+export const SelectContainer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("");
+
+  const toggleDropdown = () => setIsOpen((prev) => !prev);
+
+  const handleSelect = (value) => {
+    setSelectedValue(value);
+    setIsOpen(false); 
+  };
+
+  return (
+    <Select>
+      <SelectTrigger
+        placeholder="Choose a type"
+        onClick={toggleDropdown}
+        value={selectedValue}
+      />
+      <SelectContent isOpen={isOpen}>
+        <SelectItem value="workshop" onSelect={handleSelect} />
+        <SelectItem value="conference" onSelect={handleSelect} />
+        <SelectItem value="certification" onSelect={handleSelect} />
+        <SelectItem value="training" onSelect={handleSelect} />
+      </SelectContent>
+    </Select>
+  );
 };

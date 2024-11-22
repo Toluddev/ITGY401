@@ -1,4 +1,5 @@
 import { ChevronDown, Globe, LogOut } from "lucide-react";
+import { Sparkles,Search } from "lucide-react";
 import { useState } from "react";
 import {
   Select,
@@ -33,11 +34,19 @@ const AssignCourses = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1A1F2C]">
+    <div className="min-h-screen bg-[#000]">
       <nav className="bg-secondary/50 p-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-4">
+          <Sparkles className="absolute left-[74px] top-[26px] text-gray-400 h-4 w-4" />
             <div className="text-white font-semibold text-lg">Acme University</div>
+          </div>
+          <div className="flex items-center space-x-4">
+          <Search className="absolute left-[621px] top-[29px]  text-gray-400 h-4 w-4" />
+          <input
+            placeholder="Search"
+            className="w-[300px] h-[40px] rounded-[10px] pl-10 bg-[#2A2F3C] border-gray-700 text-white placeholder:text-gray-400"
+          />
           </div>
           <div className="flex items-center space-x-4">
             <button className="text-gray-300 hover:text-white">
@@ -50,13 +59,12 @@ const AssignCourses = () => {
           </div>
         </div>
       </nav>
-
+      <div className="border border-gray-900 "/>
       <div className="container mx-auto px-4 py-4">
         <div className="text-gray-400 text-sm">
           Dashboard / Lecturers / Assign courses
         </div>
       </div>
-=
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold text-white mb-8">
           Assign courses to lecturer
@@ -66,34 +74,34 @@ const AssignCourses = () => {
           <div className="space-y-4">
             <h2 className="text-xl text-white">Select a course</h2>
             <div className="space-y-2">
-              <label className="text-gray-400">Course</label>
-              <Select onValueChange={setSelectedCourse} value={selectedCourse}>
-                <SelectTrigger className="w-full bg-[#2A2F3C] border-0 text-white">
-                  <SelectValue placeholder="Search for a course" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="cs101">CS101 - Introduction to Programming</SelectItem>
-                  <SelectItem value="cs102">CS102 - Data Structures</SelectItem>
-                  <SelectItem value="cs103">CS103 - Algorithms</SelectItem>
-                </SelectContent>
-              </Select>
+              <label className="text-white">Course</label>
+            <select
+            id=""
+            name=""
+            className="block w-[450px] h-[50px] rounded-[10px] bg-[#2a2f3c]  text-white border border-gray-700"
+          >
+            <option value="">Select a Course</option>
+            <option value="workshop">Workshop</option>
+            <option value="conference">Conference</option>
+            <option value="certification">Certification</option>
+          </select>
             </div>
           </div>
 
           <div className="space-y-4">
             <h2 className="text-xl text-white">Select a lecturer</h2>
             <div className="space-y-2">
-              <label className="text-gray-400">Lecturer</label>
-              <Select onValueChange={setSelectedLecturer} value={selectedLecturer}>
-                <SelectTrigger className="w-full bg-[#2A2F3C] border-0 text-white">
-                  <SelectValue placeholder="Search for a lecturer" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="john">John Doe</SelectItem>
-                  <SelectItem value="jane">Jane Smith</SelectItem>
-                  <SelectItem value="bob">Bob Johnson</SelectItem>
-                </SelectContent>
-              </Select>
+              <label className="text-white">Lecturer</label>
+              <select
+            id=""
+            name=""
+            className="block w-[450px] h-[50px] rounded-[10px] bg-[#2a2f3c]  text-white border border-gray-700"
+          >
+            <option value="">Select a Lecturer</option>
+            <option value="workshop">Workshop</option>
+            <option value="conference">Conference</option>
+            <option value="certification">Certification</option>
+          </select>
             </div>
           </div>
 

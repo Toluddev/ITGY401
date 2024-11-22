@@ -3,7 +3,7 @@ import FacultyForm from "./FacultyForm";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#1A1F2C]">
+    <div className="min-h-screen bg-[#000]">
       <Navigation />
       <FacultyForm />
     </div>

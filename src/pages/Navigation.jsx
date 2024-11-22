@@ -20,10 +20,11 @@ const Navigation = () => {
           <a href="#" className="text-gray-300 hover:text-white">Academic Calendar</a>
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 gap-5">
           <button className="text-gray-300 hover:text-white">
             <Settings className="w-5 h-5" />
           </button>
+          <div className="w-[30px] h-[30px] bg-[#2a2f3c] rounded-full items-center"></div>
           {/* <button className="text-gray-300 hover:text-white">
             <Sun className="w-5 h-5" />
           </button> */}

@@ -11,22 +11,20 @@ const LecturersTable = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#1A1F2C] text-white p-8">
+    <div className="min-h-screen bg-[#000] text-white p-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-semibold mb-6">Lecturers</h1>
-        
-        {/* Search Bar */}
         <div className="relative mb-6">
           <input
             type="text"
             placeholder="Search for lecturers"
-            className="w-full bg-[#2A2F3C] text-gray-300 rounded-lg py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-[500px] bg-[#2A2F3C] text-gray-300 rounded-lg py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+          <Search className="absolute left-[470px] top-2.5 h-5 w-5 text-gray-400" />
         </div>
 
         {/* Table */}
-        <div className="bg-[#1E2330] rounded-lg overflow-hidden">
+        <div className="bg-transparent rounded-lg overflow-hidden">
           <table className="w-full text-sm text-left">
             <thead className="text-xs uppercase bg-[#1E2330] border-b border-gray-700">
               <tr>

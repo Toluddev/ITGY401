@@ -52,20 +52,17 @@ const FacultyForm = () => {
 
       <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 gap-6">
-  {/* First Name Field */}
   <div className="space-y-2">
-    <label className="text-gray-300 m-5">First Name*</label>
-    <input
-      type="text"
-      name="firstName"
-      value={formData.firstName}
-      onChange={handleChange}
-      className="w-[750px]  p-3 rounded bg-secondary text-white border border-gray-700 focus:border-primary focus:outline-none"
-      required
-    />
+  <label className="text-gray-300 m-5">First Name*</label>
+  <input
+    type="text"
+    name="firstName"
+    value={formData.firstName}
+    onChange={handleChange}
+    className="block w-[400px] p-3 rounded-[10px] bg-transparent text-white border border-gray-700 focus:border-primary focus:outline-none"
+    required
+  />
   </div>
-
-  {/* Last Name Field */}
   <div className="space-y-2">
     <label className="text-gray-300 m-5">Last Name*</label>
     <input
@@ -73,7 +70,7 @@ const FacultyForm = () => {
       name="lastName"
       value={formData.lastName}
       onChange={handleChange}
-      className="w-[750px] p-3 rounded bg-secondary text-white border border-gray-700 focus:border-primary focus:outline-none"
+      className="block w-[400px] p-3 rounded-[10px] bg-transparent text-white border border-gray-700 focus:border-primary focus:outline-none"
       required
     />
   </div>
@@ -91,12 +88,12 @@ const FacultyForm = () => {
         </div>
 
         <div className="space-y-2">
-          <label className="text-gray-300">Bio*</label>
+          <label className="text-gray-300 m-5">Bio*</label>
           <textarea
             name="bio"
             value={formData.bio}
             onChange={handleChange}
-            className="w-full p-3 rounded bg-secondary text-white border border-gray-700 focus:border-primary focus:outline-none h-32"
+            className="block w-[400px] p-3 rounded-[10px] bg-transparent text-white border border-gray-700 focus:border-primary focus:outline-none h-32"
             required
           />
         </div>
@@ -108,12 +105,13 @@ const FacultyForm = () => {
             name="hobbies"
             value={formData.hobbies}
             onChange={handleChange}
-            className="w-full p-3 rounded bg-secondary text-white border border-gray-700 focus:border-primary focus:outline-none"
+            className="block w-[400px] p-3 rounded-[10px] bg-transparent text-white border border-gray-700 focus:border-primary focus:outline-none"
             required
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-[10px]">
           <div className="space-y-2">
             <label className="text-gray-300">Office Number*</label>
             <input
@@ -121,7 +119,7 @@ const FacultyForm = () => {
               name="officeNumber"
               value={formData.officeNumber}
               onChange={handleChange}
-              className="w-full p-3 rounded bg-secondary text-white border border-gray-700 focus:border-primary focus:outline-none"
+              className="block w-[400px] p-3 rounded-[10px] bg-transparent text-white border border-gray-700 focus:border-primary focus:outline-none"
               required
             />
           </div>
@@ -133,7 +131,7 @@ const FacultyForm = () => {
               name="homeAddress"
               value={formData.homeAddress}
               onChange={handleChange}
-              className="w-full p-3 rounded bg-secondary text-white border border-gray-700 focus:border-primary focus:outline-none"
+              className="block w-[400px] p-3 rounded-[10px] bg-transparent text-white border border-gray-700 focus:border-primary focus:outline-none"
               required
             />
           </div>
@@ -147,7 +145,7 @@ const FacultyForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-3 rounded bg-secondary text-white border border-gray-700 focus:border-primary focus:outline-none"
+              className="block w-[400px] p-3 rounded-[10px] bg-transparent text-white border border-gray-700 focus:border-primary focus:outline-none"
               required
             />
           </div>
@@ -159,7 +157,7 @@ const FacultyForm = () => {
               name="phoneNumber"
               value={formData.phoneNumber}
               onChange={handleChange}
-              className="w-full p-3 rounded bg-secondary text-white border border-gray-700 focus:border-primary focus:outline-none"
+              className="block w-[400px] p-3 rounded-[10px] bg-transparent text-white border border-gray-700 focus:border-primary focus:outline-none"
               required
             />
           </div>
@@ -173,7 +171,7 @@ const FacultyForm = () => {
       name="profileLink"
       value={formData.profileLink}
       onChange={handleChange}
-      className="w-full p-3 rounded bg-secondary text-white border border-gray-700 focus:border-primary focus:outline-none"
+      className="block w-[400px] p-3 rounded-[10px] bg-transparent text-white border border-gray-700 focus:border-primary focus:outline-none"
     />
   </div>
   
@@ -184,88 +182,80 @@ const FacultyForm = () => {
       name="publicationLink"
       value={formData.publicationLink}
       onChange={handleChange}
-      className="w-full p-3 rounded bg-secondary text-white border border-gray-700 focus:border-primary focus:outline-none"
+      className="block w-[400px] p-3 rounded-[10px] bg-transparent text-white border border-gray-700 focus:border-primary focus:outline-none"
     />
+  </div>
   </div>
   
   <div className="space-y-2">
-    <label className="text-gray-300">Professional Development</label>
-    <Select
-      value={formData.professionalDevelopment}
-      onValueChange={(value) => handleSelectChange(value, "professionalDevelopment")}
-    >
-      <SelectTrigger className="w-[750px] bg-secondary text-white border-gray-700">
-        <SelectValue placeholder="Choose a type" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="workshop">Workshop</SelectItem>
-        <SelectItem value="conference">Conference</SelectItem>
-        <SelectItem value="certification">Certification</SelectItem>
-        <SelectItem value="training">Training Program</SelectItem>
-      </SelectContent>
-    </Select>
+    <label className="text-gray-300 m-2">Professional Development</label>
+    <select
+            id="professionalDevelopment"
+            name="professionalDevelopment"
+            className="block w-[400px] h-[60px] rounded-[10px] bg-transparent  text-white border border-gray-700"
+            value={formData.professionalDevelopment}
+            onChange={handleChange}
+          >
+            <option value="">Choose a type</option>
+            <option value="workshop">Workshop</option>
+            <option value="conference">Conference</option>
+            <option value="certification">Certification</option>
+          </select>
   </div>
   
   <div className="space-y-2 md:col-span-2">
     <label className="text-gray-300">Continuing Education</label>
-    <Select
-      value={formData.continuingEducation}
-      onValueChange={(value) => handleSelectChange(value, "continuingEducation")}
-    >
-      <SelectTrigger className="w-[750px] bg-secondary text-white border-gray-700">
-        <SelectValue placeholder="Choose a type" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="course">Online Course</SelectItem>
-        <SelectItem value="degree">Advanced Degree</SelectItem>
-        <SelectItem value="seminar">Seminar</SelectItem>
-        <SelectItem value="webinar">Webinar</SelectItem>
-      </SelectContent>
-    </Select>
+    <select
+            id="professionalDevelopment"
+            name="professionalDevelopment"
+            className="block w-[400px] h-[60px] rounded-[10px] bg-transparent  text-white border border-gray-700"
+            value={formData.professionalDevelopment}
+            onChange={handleChange}
+          >
+            <option value="">Choose a type</option>
+            <option value="workshop">Workshop</option>
+            <option value="conference">Conference</option>
+            <option value="certification">Certification</option>
+          </select>
   </div>
   <div className="space-y-2 md:col-span-2">
           <label className="text-gray-300">Honors</label>
-          <Select
-            value={formData.honors}
-            onValueChange={(value) => handleSelectChange(value, "honors")}
+          <select
+            id="professionalDevelopment"
+            name="professionalDevelopment"
+            className="block w-[400px] h-[60px] rounded-[10px] bg-transparent  text-white border border-gray-700"
+            value={formData.professionalDevelopment}
+            onChange={handleChange}
           >
-            <SelectTrigger className="w-full bg-secondary text-white border-gray-700">
-              <SelectValue placeholder="Choose a type" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="deans-list">Dean's List</SelectItem>
-              <SelectItem value="honors-society">Honors Society</SelectItem>
-              <SelectItem value="distinction">Distinction</SelectItem>
-              <SelectItem value="excellence">Excellence Award</SelectItem>
-            </SelectContent>
-          </Select>
+            <option value="">Choose a type</option>
+            <option value="workshop">Workshop</option>
+            <option value="conference">Conference</option>
+            <option value="certification">Certification</option>
+          </select>
         </div>
 
   <div className="space-y-2 md:col-span-2">
     <label className="text-gray-300">Awards</label>
-    <Select
-      value={formData.awards}
-      onValueChange={(value) => handleSelectChange(value, "awards")}
-    >
-      <SelectTrigger className="w-full bg-secondary text-white border-gray-700">
-        <SelectValue placeholder="Choose a type" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="teaching">Teaching Award</SelectItem>
-        <SelectItem value="research">Research Award</SelectItem>
-        <SelectItem value="service">Service Award</SelectItem>
-        <SelectItem value="innovation">Innovation Award</SelectItem>
-      </SelectContent>
-    </Select>
+    <select
+            id="professionalDevelopment"
+            name="professionalDevelopment"
+            className="block w-[400px] h-[60px] rounded-[10px] bg-transparent  text-white border border-gray-700"
+            value={formData.professionalDevelopment}
+            onChange={handleChange}
+          >
+            <option value="">Choose a type</option>
+            <option value="workshop">Workshop</option>
+            <option value="conference">Conference</option>
+            <option value="certification">Certification</option>
+          </select>
   </div>
-</div>
 
 
         <button
           type="submit"
-          className="w-full md:w-auto px-6 py-3 bg-grey text-white rounded hover:bg-primary/90 transition-colors"
+          className="w-[60px] h-[40px] ml-[1000px] md:w-auto px-6 py-3 bg-blue-500 text-white text-center align-items rounded-[10px] hover:bg-primary/90 transition-colors"
         >
-          Submit
+          Save
         </button>
       </form>
     </div>
