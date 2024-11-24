@@ -41,6 +41,6 @@
     @apply border-neutral-200 dark:border-neutral-800;
   }
   body {
-    @apply bg-[#1A1F2C] text-foreground;
+    @apply bg-[#121417] text-white;
   }
 }

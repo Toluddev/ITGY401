@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Lecturers from "./pages/Lecturers";
 import AssignCourses from "./pages/AssignCourses";
+import Landing from "./pages/Landing";
+import Welcome from "./pages/Welcome";
+import Academic from "./pages/Academic";
+import LecturerPortal from "./pages/LecturerPortal";
 
 const queryClient = new QueryClient();
 
@@ -17,7 +21,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/academic" element={<Academic />} />
+          <Route path="/landing" element={<Landing />} />
           <Route path="/lecturers" element={<Lecturers />} />
+          <Route path="/portal" element={<LecturerPortal />} />
           <Route path="/lecturers/assign" element={<AssignCourses />} />
         </Routes>
       </BrowserRouter>
