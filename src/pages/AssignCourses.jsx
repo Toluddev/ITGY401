@@ -96,12 +96,12 @@ const AssignCourses = () => {
             </div>
           </div>
 
-          <Button
+          <button
             onClick={handleAssign}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8"
+            className="w-[60px] h-[40px] md:w-auto px-6 py-3 bg-blue-500 text-white text-center align-items rounded-[10px]"
           >
             Assign
-          </Button>
+          </button>
         </div>
       </div>
     </div>
