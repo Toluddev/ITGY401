@@ -1,15 +1,6 @@
 import { ChevronDown, Globe, LogOut } from "lucide-react";
 import { Sparkles,Search } from "lucide-react";
 import { useState } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Button } from "../components/ui/Button";
-// import { useToast } from "../components/ui/useToast";
 
 const AssignCourses = () => {
   const [selectedCourse, setSelectedCourse] = useState("");
