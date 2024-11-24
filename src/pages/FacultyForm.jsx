@@ -1,13 +1,6 @@
 import { useState } from "react";
 import { Upload } from "lucide-react";
 // import { useToast } from "../components/ui/useToast";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../components/ui/Select";
 
 const FacultyForm = () => {
   // const { toast } = useToast();
