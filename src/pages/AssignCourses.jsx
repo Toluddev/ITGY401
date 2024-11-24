@@ -1,27 +1,15 @@
 import { ChevronDown, Globe, LogOut } from "lucide-react";
 import { Sparkles,Search } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AssignCourses = () => {
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedLecturer, setSelectedLecturer] = useState("");
   // const { toast } = useToast();
-
+  const navigate = useNavigate();
   const handleAssign = () => {
-    if (!selectedCourse || !selectedLecturer) {
-      // toast({
-      //   title: "Error",
-      //   description: "Please select both a course and a lecturer",
-      //   variant: "destructive",
-      // });
-      return;
-    }
-
-    console.log("Assigning course:", selectedCourse, "to lecturer:", selectedLecturer);
-    // toast({
-    //   title: "Success",
-    //   description: "Course assigned successfully",
-    // });
+    navigate("/lecturers"); 
   };
 
   return (

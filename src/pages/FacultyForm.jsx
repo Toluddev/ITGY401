@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { Upload } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 // import { useToast } from "../components/ui/useToast";
 
 const FacultyForm = () => {
   // const { toast } = useToast();
+  const navigate = useNavigate();
+  const handleAssign = () => {
+    navigate("/landing"); 
+  };
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -245,6 +251,7 @@ const FacultyForm = () => {
 
 
         <button
+          onClick={handleAssign}
           type="submit"
           className="w-[60px] h-[40px] ml-[1000px] md:w-auto px-6 py-3 bg-blue-500 text-white text-center align-items rounded-[10px] hover:bg-primary/90 transition-colors"
         >

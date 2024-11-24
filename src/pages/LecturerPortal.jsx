@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronRight, LayoutDashboard, BookOpen, Users, BarChart2, Settings, HelpCircle, Plus } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 const navItems = [
   { icon: LayoutDashboard, label: "Overview", active: true },
   { icon: BookOpen, label: "Courses" },
@@ -28,7 +28,10 @@ const options = [
 
 const LecturerPortal = () => {
   const [activeNav, setActiveNav] = useState("Overview");
-
+  const navigate = useNavigate();
+  const handleAssign = () => {
+    navigate("/assign"); 
+  };
   return (
     <div className="min-h-screen bg-[#000] flex">
       <div className="w-64 bg-[#000] p-6 flex flex-col">
@@ -51,7 +54,7 @@ const LecturerPortal = () => {
           ))}
         </nav>
 
-        <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+        <button onClick={handleAssign} className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
           <Plus size={20} />
           Add
         </button>

@@ -26,7 +26,7 @@ const App = () => (
           <Route path="/landing" element={<Landing />} />
           <Route path="/lecturers" element={<Lecturers />} />
           <Route path="/portal" element={<LecturerPortal />} />
-          <Route path="/lecturers/assign" element={<AssignCourses />} />
+          <Route path="/assign" element={<AssignCourses />} />
         </Routes>
       </BrowserRouter>
   </QueryClientProvider>

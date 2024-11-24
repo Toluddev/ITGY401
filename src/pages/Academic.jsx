@@ -1,6 +1,10 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const Academic = () => {
+    const navigate = useNavigate();
+    const handleAssign = () => {
+      navigate("/assign"); 
+    };
     return (
         <div className="min-h-screen flex flex-col bg-[#121417] text-white">
             {/* Header */}
@@ -70,6 +74,7 @@ const Academic = () => {
 
                         {/* Submit Button */}
                         <button
+                            onClick={handleAssign}
                             type="submit"
                             className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
                         >

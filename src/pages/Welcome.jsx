@@ -1,6 +1,13 @@
-
+import { useNavigate } from "react-router-dom";
 
 const Welcome = () => {
+    const navigate = useNavigate();
+  const handleAssign = () => {
+    navigate("/landing"); 
+  };
+  const handleClick = () => {
+    navigate("/"); 
+  };
     return (
         <div className="min-h-screen flex flex-col bg-[#121417] text-white">
             {/* Header */}
@@ -17,6 +24,7 @@ const Welcome = () => {
 
                 {/* Right Section: Sign Up Button */}
                 <button
+                    onClick={handleClick}
                     className="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
                 >
                     Sign Up
@@ -67,6 +75,7 @@ const Welcome = () => {
 
                         {/* Login Button */}
                         <button
+                            onClick={handleAssign}
                             type="submit"
                             className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
                         >
