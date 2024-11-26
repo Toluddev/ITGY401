@@ -11,11 +11,11 @@ const navItems = [
 ];
 
 const data = [
-  { id: 1, name: "Dr Nzewata Jerimiah Uche", email: "alice.smith@gmail.com", title: "AI Researcher", createdAt: "01/01/2023" },
-  { id: 2, name: "Bob Johnson", email: "bob.johnson@gmail.com", title: "Data Scientist", createdAt: "01/01/2022" },
-  { id: 3, name: "Charlie Brown", email: "charlie.brown@gmail.com", title: "Software Engineer", createdAt: "01/01/2021" },
-  { id: 4, name: "David Miller", email: "david.miller@gmail.com", title: "Product Manager", createdAt: "01/01/2020" },
-  { id: 5, name: "Eva Davis", email: "eva.davis@gmail.com", title: "UX Designer", createdAt: "01/01/2019" }
+  { id: 1, name: "Dr Nzewata Jerimiah Uche", email: "alice.smith@gmail.com", Position: "Senior Lecturer", createdAt: "01/01/2023" },
+  { id: 2, name: "Bob Johnson", email: "bob.johnson@gmail.com", Position: "Junior Lecturer", createdAt: "01/01/2022" },
+  { id: 3, name: "Charlie Brown", email: "charlie.brown@gmail.com", Position: "Junior Lecturer", createdAt: "01/01/2021" },
+  { id: 4, name: "David Miller", email: "david.miller@gmail.com", Position: "Junior Lecturer", createdAt: "01/01/2020" },
+  { id: 5, name: "Eva Davis", email: "eva.davis@gmail.com", Position: "Junior Lecturer", createdAt: "01/01/2019" }
 ];
 
 const LecturersTable = () => {
