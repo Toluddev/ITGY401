@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 const Academic = () => {
     const navigate = useNavigate();
     const handleAssign = () => {
-      navigate("/assign"); 
+      navigate("/courses"); 
     };
     return (
         <div className="min-h-screen flex flex-col bg-[#000] text-white">
@@ -21,8 +21,8 @@ const Academic = () => {
 
                 {/* Right Section: Navigation */}
                 <ul className="hidden sm:flex space-x-6 text-white font-medium">
-                    <li className="hover:underline cursor-pointer">Dashboard</li>
-                    <li className="hover:underline cursor-pointer">Courses</li>
+                    <li className="hover:underline cursor-pointer" onClick={() => navigate('/lecturers')}>Lecturers</li>
+                    <li className="hover:underline cursor-pointer" onClick={() => navigate('/courses')}>Courses</li>
                 </ul>
             </header>
 

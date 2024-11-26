@@ -6,11 +6,14 @@ import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import Lecturers from "./pages/Lecturers";
 import Courses from "./pages/Courses";
+import AddCourse from "./pages/./AddCourse";
 import AssignCourses from "./pages/AssignCourses";
 import Landing from "./pages/Landing";
 import Welcome from "./pages/Welcome";
 import Academic from "./pages/Academic";
 import LecturerPortal from "./pages/LecturerPortal";
+import AddClassContent from "./pages/AddClassContent";
+
 
 const queryClient = new QueryClient();
 
@@ -23,13 +26,15 @@ const App = () => (
         <Routes>
         <Route default path="/login" element={<Welcome />} />
           <Route path="/add-lecturer" element={<Index />} />
-          <Route path="/academic" element={<Academic />} />
-          <Route path="/landing" element={<Landing />} />
+          {/* <Route path="/academic" element={<Academic />} /> */}
+          <Route path="/lecturers/:lecturerId" element={<Landing />} />
           <Route path="/lecturers" element={<Lecturers />} />
+          <Route path="/lecturers/admin/assign-course" element={<AssignCourses />} />
+          <Route path="/lecturers/admin/assign-class-content" element={<AddClassContent />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/add" element={<Academic />} />
 
-          <Route path="/portal" element={<LecturerPortal />} />
-          <Route path="/assign" element={<AssignCourses />} />
+          <Route path="/lecturers/admin/view" element={<LecturerPortal />} />
 
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>

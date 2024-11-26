@@ -3,11 +3,11 @@ import { Search, LayoutDashboard, BookOpen, Users, BarChart2, Settings, HelpCirc
 import { useNavigate } from "react-router-dom";
 
 const navItems = [
-  { icon: LayoutDashboard, label: "Overview" },
+  // { icon: LayoutDashboard, label: "Overview" },
   { icon: BookOpen, label: "Courses", path: "/courses"},
   { icon: Users, label: "Lecturers",  path: "/lecturers" },
-  { icon: BarChart2, label: "Analytics" },
-  { icon: Settings, label: "Settings" },
+  // { icon: BarChart2, label: "Analytics" },
+  // { icon: Settings, label: "Settings" },
 ];
 
 const data = [
@@ -61,16 +61,16 @@ const LecturersTable = () => {
 
       <button 
         onClick={handleAssign} 
-        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+        className="w-full bg-blue-600 text-white py-2 mb-14 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
       >
         <Plus size={20} />
-        Add
+        Add Lecturer
       </button>
 
-      <button className="mt-6 flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+      {/* <button className="mt-6 flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
         <HelpCircle size={20} />
         Help & feedback
-      </button>
+      </button> */}
     </div>
   );
 
@@ -130,11 +130,23 @@ const LecturersTable = () => {
                     <td className="px-6 py-4">{item.title}</td>
                     <td className="px-6 py-4 text-gray-400">{item.createdAt}</td>
                     <td className="px-6 py-4">
+                    <button
+                        className="text-gray-400 hover:text-white mr-3"
+                        onClick={() => navigate('/lecturers/admin/view')}
+                      >
+                        View
+                      </button>
+                      <button
+                        className="text-gray-400 hover:text-white mr-3"
+                        onClick={() => console.log('Actions clicked', item.id)}
+                      >
+                        Edit
+                      </button>
                       <button
                         className="text-gray-400 hover:text-white"
                         onClick={() => console.log('Actions clicked', item.id)}
                       >
-                        View / Edit / Delete
+                        Delete
                       </button>
                     </td>
                   </tr>

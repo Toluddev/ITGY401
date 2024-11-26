@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Upload } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+
 // import { useToast } from "../components/ui/useToast";
 const FacultyForm = () => {
   // const { toast } = useToast();
@@ -46,7 +48,10 @@ const FacultyForm = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-white mb-8">Add New Faculty</h1>
+      <div className="flex gap-2 cursor-pointer">
+        <ArrowLeft onClick={() => navigate('/lecturers')} />
+        <h1 className="text-3xl font-bold text-white mb-8">Add New Lecturer</h1>
+      </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 gap-6">

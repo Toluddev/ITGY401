@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, Globe, LogOut, Plus, HelpCircle, Menu, X, LayoutDashboard, BookOpen, Users, BarChart2, Settings, ArrowLeft } from "lucide-react";
+import { ChevronDown, Globe, LogOut, Plus, HelpCircle, Menu, X, LayoutDashboard, BookOpen, Users, BarChart2, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const navItems = [
@@ -18,7 +18,7 @@ const AssignCourses = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleAssign = () => {
-    navigate("/lecturers/admin/view");
+    navigate("/lecturers");
   };
 
   const toggleMobileMenu = () => {
@@ -97,12 +97,9 @@ const AssignCourses = () => {
           </div>
         </div>
         <div className="container mx-auto px-4 py-8">
-          <div className="flex gap-2 cursor-pointer">
-            <ArrowLeft onClick={() => navigate('/lecturers/admin/view')} />
-            <h1 className="text-3xl font-bold text-white mb-8">
-              Assign courses to lecturer
-            </h1>
-          </div>
+          <h1 className="text-3xl font-bold text-white mb-8">
+            Assign course
+          </h1>
 
           <div className="space-y-8 max-w-xl">
             <div className="space-y-4">

@@ -18,7 +18,7 @@ const AssignCourses = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleAssign = () => {
-    navigate("/lecturers/admin/view");
+    navigate("/lecturers");
   };
 
   const toggleMobileMenu = () => {
@@ -93,16 +93,16 @@ const AssignCourses = () => {
         <div className="border border-gray-900" />
         <div className="container mx-auto px-4 py-4">
           <div className="text-gray-400 text-sm">
-            Dashboard / Lecturers / Assign courses
+            Dashboard / Lecturers / Assign class content
           </div>
         </div>
         <div className="container mx-auto px-4 py-8">
-          <div className="flex gap-2 cursor-pointer">
-            <ArrowLeft onClick={() => navigate('/lecturers/admin/view')} />
-            <h1 className="text-3xl font-bold text-white mb-8">
-              Assign courses to lecturer
-            </h1>
-          </div>
+            <div className="flex gap-2 cursor-pointer">
+                <ArrowLeft onClick={() => navigate('/lecturers/admin/view')} />
+                <h1 className="text-3xl font-bold text-white mb-8">
+                    Assign class content to lecturer course
+                </h1>
+            </div>
 
           <div className="space-y-8 max-w-xl">
             <div className="space-y-4">
@@ -123,24 +123,18 @@ const AssignCourses = () => {
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-xl text-white">Select a lecturer</h2>
+              <h2 className="text-xl text-white">Class content</h2>
               <div className="space-y-2">
-                <label className="text-white">Lecturer</label>
-                <select
-                  id=""
-                  name=""
-                  className="block w-[450px] h-[50px] rounded-[10px] bg-[#2a2f3c] text-white border border-gray-700"
-                >
-                  <option value="">Select a Lecturer</option>
-                  <option value="workshop">Dr Jerry Nzewata</option>
-                  <option value="conference">Dr Idowu</option>
-                  <option value="certification">Dr Abel</option>
-                </select>
+              <textarea
+                name="bio"
+                className="block w-[400px] p-3 rounded-[10px] bg-transparent text-white border border-gray-700 focus:border-primary focus:outline-none h-32"
+                required
+            />
               </div>
             </div>
 
             <button
-              onClick={handleAssign}
+              onClick={() => navigate('/lecturers/admin/view')}
               className="w-[60px] h-[40px] md:w-auto px-6 py-3 bg-blue-600 text-white text-center align-items rounded-[10px]"
             >
               Assign

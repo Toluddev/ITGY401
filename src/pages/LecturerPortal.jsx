@@ -3,11 +3,11 @@ import { ChevronRight, LayoutDashboard, BookOpen, Users, BarChart2, Settings, He
 import { useNavigate } from "react-router-dom";
 
 const navItems = [
-  { icon: LayoutDashboard, label: "Overview" },
+  // { icon: LayoutDashboard, label: "Overview" },
   { icon: BookOpen, label: "Courses", path: "/courses"},
   { icon: Users, label: "Lecturers",  path: "/lecturers" },
-  { icon: BarChart2, label: "Analytics" },
-  { icon: Settings, label: "Settings" },
+  // { icon: BarChart2, label: "Analytics" },
+  // { icon: Settings, label: "Settings" },
 ];
 
 const courses = [
@@ -51,6 +51,7 @@ const LecturerPortal = () => {
             onClick={() => {
               setActiveNav(item.label);
               setIsMobileMenuOpen(false);
+              navigate(item.path)
             }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg mb-2 transition-colors ${
               activeNav === item.label
@@ -64,18 +65,18 @@ const LecturerPortal = () => {
         ))}
       </nav>
 
-      <button 
+      {/* <button 
         onClick={handleAssign} 
-        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 mb-14 transition-colors flex items-center justify-center gap-2"
       >
         <Plus size={20} />
         Add
-      </button>
+      </button> */}
 
-      <button className="mt-6 flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+      {/* <button className="mt-6 flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
         <HelpCircle size={20} />
         Help & feedback
-      </button>
+      </button> */}
     </div>
   );
 
@@ -103,12 +104,30 @@ const LecturerPortal = () => {
         <Sidebar className="h-screen sticky top-0" />
       </div>
 
-      <div className="flex-1 p-4 lg:p-8">
-        <div className="glass p-4 lg:p-8 mb-1">
-          <h1 className="text-2xl lg:text-3xl font-semibold mb-2">Dr. Jane Smith</h1>
-          <p className="text-gray-400">janesmith@gmail.com</p>
-        </div>
+      <div className="flex-1 p-4 lg:p-8 ">
+        <div className="glass p-4 lg:p-8 mb-1 flex gap-4">
+          <div>
+            <h1 className="text-2xl lg:text-3xl font-semibold mb-2">Dr. Jane Smith</h1>
+            <p className="text-gray-400">janesmith@gmail.com</p>
+          </div>
+          <div className="flex gap-2 flex-1">
+            <button 
+              onClick={() => navigate('/lecturers/admin/assign-course')} 
+              className="h-12 bg-blue-600 text-white py-2 px-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+            >
+            <Plus size={20} />
+              Assign Course
+            </button>
+            <button 
+              onClick={() => navigate('/lecturers/admin/assign-class-content')} 
+              className="h-12 bg-blue-600 text-white py-2 px-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+            >
+            <Plus size={20} />
+              Add Class Content
+            </button>
+          </div>
 
+        </div>
         <div className="space-y-6 lg:space-y-8">
           <section>
             <h2 className="text-xl font-semibold mb-4">Assigned courses</h2>
@@ -140,7 +159,7 @@ const LecturerPortal = () => {
             </div>
           </section>
 
-          <section>
+          {/* <section>
             <h2 className="text-xl font-semibold mb-4">Options</h2>
             <div className="space-y-2">
               {options.map((option) => (
@@ -153,7 +172,7 @@ const LecturerPortal = () => {
                 </button>
               ))}
             </div>
-          </section>
+          </section> */}
         </div>
       </div>
     </div>
