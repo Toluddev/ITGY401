@@ -19,7 +19,7 @@ const Welcome = () => {
                         alt="Vector"
                         className="w-[16px] h-[16px] object-cover"
                     />
-                    <span className="font-bold text-lg">Dr. Jane Smith</span>
+                    <span className="font-bold text-lg">Lecturer's Portfolio</span>
                 </div>
 
                 {/* Right Section: Sign Up Button */}
