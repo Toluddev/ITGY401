@@ -107,8 +107,8 @@ const LecturerPortal = () => {
       <div className="flex-1 p-4 lg:p-8 ">
         <div className="glass p-4 lg:p-8 mb-1 flex gap-4">
           <div>
-            <h1 className="text-2xl lg:text-3xl font-semibold mb-2">Dr. Jane Smith</h1>
-            <p className="text-gray-400">janesmith@gmail.com</p>
+            <h1 className="text-2xl lg:text-3xl font-semibold mb-2">Dr. Jeremiah Nzewata</h1>
+            <p className="text-gray-400">jeremiah@gmail.com</p>
           </div>
           <div className="flex gap-2 flex-1">
             <button 
