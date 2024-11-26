@@ -127,7 +127,7 @@ const LecturersTable = () => {
                   <tr key={item.id} className="border-b border-gray-700 hover:bg-[#2A2F3C] transition-colors">
                     <td className="px-6 py-4">{item.name}</td>
                     <td className="px-6 py-4 text-gray-400">{item.email}</td>
-                    <td className="px-6 py-4">{item.title}</td>
+                    <td className="px-6 py-4">{item.Position}</td>
                     <td className="px-6 py-4 text-gray-400">{item.createdAt}</td>
                     <td className="px-6 py-4">
                     <button
