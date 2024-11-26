@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const navItems = [
   { icon: LayoutDashboard, label: "Overview" },
-  { icon: BookOpen, label: "Courses" },
-  { icon: Users, label: "Students" },
+  { icon: BookOpen, label: "Courses", path: "/courses"},
+  { icon: Users, label: "Lecturers",  path: "/lecturers" },
   { icon: BarChart2, label: "Analytics" },
   { icon: Settings, label: "Settings" },
 ];

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronRight, LayoutDashboard, BookOpen, Users, BarChart2, Settings, HelpCircle, Plus, Menu, X } from "lucide-react";
+import { Search, LayoutDashboard, BookOpen, Users, BarChart2, Settings, HelpCircle, Plus, Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const navItems = [
@@ -10,24 +10,16 @@ const navItems = [
   { icon: Settings, label: "Settings" },
 ];
 
-const courses = [
-  { id: 1, name: "Course 101" },
-  { id: 2, name: "Course 102" },
+const data = [
+  { id: 1, name: "Programming", code: "COSC 111",  createdAt: "01/01/2023" },
+  { id: 2, name: "Math", code: "MTH 111",  createdAt: "01/01/2023" },
+  { id: 3, name: "English", code: "GEDS 111",  createdAt: "01/01/2023" },
+  { id: 4, name: "Statistics", code: "STAT 111",  createdAt: "01/01/2023" },
+  { id: 5, name: "Biology", code: "SCI 111",  createdAt: "01/01/2023" },
+  { id: 6, name: "Physics", code: "PHY 111",  createdAt: "01/01/2023" },
 ];
 
-const lectures = [
-  { id: 1, title: "Lecture 1: Introduction to the course" },
-  { id: 2, title: "Lecture 2: How to write a good essay" },
-  { id: 3, title: "Lecture 3: The history of the United States" },
-];
-
-const options = [
-  { id: 1, label: "Assign new course" },
-  { id: 2, label: "Edit lecturer info" },
-  { id: 3, label: "Delete lecturer" },
-];
-
-const LecturerPortal = () => {
+const LecturersTable = () => {
   const [activeNav, setActiveNav] = useState("Overview");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -104,60 +96,51 @@ const LecturerPortal = () => {
       </div>
 
       <div className="flex-1 p-4 lg:p-8">
-        <div className="glass p-4 lg:p-8 mb-1">
-          <h1 className="text-2xl lg:text-3xl font-semibold mb-2">Dr. Jane Smith</h1>
-          <p className="text-gray-400">janesmith@gmail.com</p>
-        </div>
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-3xl font-semibold mb-6">Courses</h1>
+          <div className="relative mb-6">
+            <input
+              type="text"
+              placeholder="Search for courses"
+              className="w-full md:w-[500px] bg-[#2A2F3C] text-gray-300 rounded-lg py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+          </div>
 
-        <div className="space-y-6 lg:space-y-8">
-          <section>
-            <h2 className="text-xl font-semibold mb-4">Assigned courses</h2>
-            <div className="space-y-2">
-              {courses.map((course) => (
-                <button
-                  key={course.id}
-                  className="w-full glass p-3 lg:p-4 flex items-center justify-between hover:bg-white/10 transition-colors text-sm lg:text-base"
-                >
-                  <span>{course.name}</span>
-                  <ChevronRight size={20} className="text-gray-400" />
-                </button>
-              ))}
-            </div>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-4">Class content</h2>
-            <div className="space-y-2">
-              {lectures.map((lecture) => (
-                <button
-                  key={lecture.id}
-                  className="w-full glass p-3 lg:p-4 flex items-center justify-between hover:bg-white/10 transition-colors text-sm lg:text-base"
-                >
-                  <span className="text-left">{lecture.title}</span>
-                  <ChevronRight size={20} className="text-gray-400 flex-shrink-0 ml-2" />
-                </button>
-              ))}
-            </div>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold mb-4">Options</h2>
-            <div className="space-y-2">
-              {options.map((option) => (
-                <button
-                  key={option.id}
-                  className="w-full glass p-3 lg:p-4 flex items-center justify-between hover:bg-white/10 transition-colors text-sm lg:text-base"
-                >
-                  <span>{option.label}</span>
-                  <ChevronRight size={20} className="text-gray-400" />
-                </button>
-              ))}
-            </div>
-          </section>
+          {/* Table */}
+          <div className="bg-transparent rounded-lg overflow-x-auto">
+            <table className="w-full text-sm text-left">
+              <thead className="text-xs uppercase bg-[#1E2330] border-b border-gray-700">
+                <tr>
+                  <th className="px-6 py-4 text-gray-400">Name</th>
+                  <th className="px-6 py-4 text-gray-400">Code</th>
+                  <th className="px-6 py-4 text-gray-400">Created at</th>
+                  <th className="px-6 py-4 text-gray-400">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.map((item) => (
+                  <tr key={item.id} className="border-b border-gray-700 hover:bg-[#2A2F3C] transition-colors">
+                    <td className="px-6 py-4">{item.name}</td>
+                    <td className="px-6 py-4 text-gray-400">{item.code}</td>
+                    <td className="px-6 py-4 text-gray-400">{item.createdAt}</td>
+                    <td className="px-6 py-4">
+                      <button
+                        className="text-gray-400 hover:text-white"
+                        onClick={() => console.log('Actions clicked', item.id)}
+                      >
+                        View / Edit / Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default LecturerPortal;
+export default LecturersTable;

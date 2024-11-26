@@ -3,10 +3,10 @@ import "../assets/Logo.png"
 const Welcome = () => {
     const navigate = useNavigate();
   const handleAssign = () => {
-    navigate("/landing"); 
+    navigate("/lecturers"); 
   };
   const handleClick = () => {
-    navigate("/signup"); 
+    navigate("/"); 
   };
     return (
         <div className="min-h-screen flex flex-col bg-[#000] text-white">

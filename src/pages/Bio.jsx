@@ -11,7 +11,7 @@ const Bio = () => {
         },
         {
           label: "Email:",
-          value: "jennifer.smith@ucsf.edu",
+          value: "jeremiah.nzewata@ucsf.edu",
           link: "mailto:jennifer.smith@ucsf.edu",
           type: "email"
         },
@@ -29,8 +29,8 @@ const Bio = () => {
         },
         {
           label: "Publications:",
-          value: "scholar.google.com/citations?user=12345",
-          link: "https://scholar.google.com/citations?user=12345",
+          value: "https://babcockuni.academia.edu/UcheJerryNzenwata",
+          link: "https://babcockuni.academia.edu/UcheJerryNzenwata",
           type: "publications"
         }
       ];
@@ -39,7 +39,7 @@ const Bio = () => {
             <div className="text-left">
                 <h1 className="text-2xl font-bold mb-4">Bio</h1>
                 <h2 className="leading-relaxed">
-                    Jennifer Smith is a physician-scientist in the Division of Pulmonary and Critical Care Medicine at UCSF. She completed her medical degree and internal medicine residency at UCSF, and fellowship in pulmonary and critical care medicine at Harvard Medical School. Her research focuses on understanding the role of the lung microbiome in health and disease. She has received funding from the National Institutes of Health, American Lung Association, and Cystic Fibrosis Foundation. She is also passionate about medical education and serves as the associate program director for the pulmonary and critical care fellowship.
+                    Jeremiah Nzewata is a physician-scientist in the Division of Pulmonary and Critical Care Medicine at UCSF. He completed his computer science degree, and fellowship in pulmonary and critical care medicine at Harvard Medical School. Her research focuses on understanding the role of the lung microbiome in health and disease. She has received funding from the National Institutes of Health, American Lung Association, and Cystic Fibrosis Foundation. She is also passionate about medical education and serves as the associate program director for the pulmonary and critical care fellowship.
                 </h2>
             </div>
 

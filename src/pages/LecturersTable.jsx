@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 const navItems = [
   { icon: LayoutDashboard, label: "Overview" },
-  { icon: BookOpen, label: "Courses" },
-  { icon: Users, label: "Students" },
+  { icon: BookOpen, label: "Courses", path: "/courses"},
+  { icon: Users, label: "Lecturers",  path: "/lecturers" },
   { icon: BarChart2, label: "Analytics" },
   { icon: Settings, label: "Settings" },
 ];
 
 const data = [
-  { id: 1, name: "Alice Smith", email: "alice.smith@gmail.com", title: "AI Researcher", createdAt: "01/01/2023" },
+  { id: 1, name: "Dr Nzewata Jerimiah Uche", email: "alice.smith@gmail.com", title: "AI Researcher", createdAt: "01/01/2023" },
   { id: 2, name: "Bob Johnson", email: "bob.johnson@gmail.com", title: "Data Scientist", createdAt: "01/01/2022" },
   { id: 3, name: "Charlie Brown", email: "charlie.brown@gmail.com", title: "Software Engineer", createdAt: "01/01/2021" },
   { id: 4, name: "David Miller", email: "david.miller@gmail.com", title: "Product Manager", createdAt: "01/01/2020" },
@@ -24,7 +24,10 @@ const LecturersTable = () => {
   const navigate = useNavigate();
 
   const handleAssign = () => {
-    navigate("/assign");
+    navigate("/add-lecturer");
+  };
+  const handleCourses = (path) => {
+    navigate(path);
   };
 
   const toggleMobileMenu = () => {
@@ -42,6 +45,7 @@ const LecturersTable = () => {
             onClick={() => {
               setActiveNav(item.label);
               setIsMobileMenuOpen(false);
+              handleCourses(item.path)
             }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg mb-2 transition-colors ${
               activeNav === item.label
