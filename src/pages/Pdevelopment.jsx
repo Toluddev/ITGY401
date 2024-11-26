@@ -124,7 +124,7 @@ const Pdevelopment = () => {
             </div>
 
             {/* Final Honors and Awards Entry */}
-            <div className='text-left pt-4'>
+            <div className='text-left pt-4 mb-[80px]'>
                 <div className='flex flex-wrap gap-4'>
                     <div className='flex-1  items-start'>
                         <div className='mr-4 font-bold '>2020</div>

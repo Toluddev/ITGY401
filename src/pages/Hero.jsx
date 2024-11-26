@@ -23,11 +23,8 @@ const Hero = () => {
 
       {/* Buttons */}
       <div className="flex space-x-4 mt-4 md:mt-0 md:ml-auto">
-        <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition duration-300">
-          Follow
-        </button>
-        <button className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">
-          Message
+        <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-gray-300 transition duration-300">
+          Mailto:email
         </button>
       </div>
     </div>

@@ -1,21 +1,21 @@
 import { useNavigate } from "react-router-dom";
-
+import "../assets/Logo.png"
 const Welcome = () => {
     const navigate = useNavigate();
   const handleAssign = () => {
     navigate("/landing"); 
   };
   const handleClick = () => {
-    navigate("/"); 
+    navigate("/signup"); 
   };
     return (
-        <div className="min-h-screen flex flex-col bg-[#121417] text-white">
+        <div className="min-h-screen flex flex-col bg-[#000] text-white">
             {/* Header */}
-            <header className="flex items-center justify-between py-4 bg-[#121417] text-white border-b-2 border-white px-[60px]">
+            <header className="flex items-center justify-between py-4 bg-[#000] text-white border-b-2 border-white px-[60px]">
                 {/* Left Section: Logo and Title */}
                 <div className="flex items-center space-x-4">
                     <img
-                        src="/Logo.png" // Replace with your image path
+                        src="../assets/Logo.png" 
                         alt="Vector"
                         className="w-[16px] h-[16px] object-cover"
                     />
@@ -25,7 +25,7 @@ const Welcome = () => {
                 {/* Right Section: Sign Up Button */}
                 <button
                     onClick={handleClick}
-                    className="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                    className="bg-blue-600 text-white py-2 px-4 rounded-md focus:ring-2 focus:ring-opacity-50"
                 >
                     Sign Up
                 </button>
@@ -77,7 +77,7 @@ const Welcome = () => {
                         <button
                             onClick={handleAssign}
                             type="submit"
-                            className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                            className="w-full py-2 px-4 bg-blue-600 text-white rounded-md  focus:ring-2 focus:ring-opacity-50"
                         >
                             Log In
                         </button>

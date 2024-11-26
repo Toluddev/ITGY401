@@ -13,7 +13,7 @@ const Lecturers = () => {
       <div className="w-full mx-auto space-y-8">
         <div className="flex justify-between items-center">
         <Sparkles className="absolute left-3 top-[44px] text-gray-400 h-4 w-4" />
-          <h1 className="text-[20px] font-semibold text-white">Lecturers</h1>
+          <h1 className="text-[20px] font-semibold text-white">Lecturer's Portfolio</h1>
           <div className="flex relative gap-10">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           <input

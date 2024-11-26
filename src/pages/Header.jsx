@@ -9,7 +9,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex items-center justify-between  py-4 bg-[#121417] text-white border-b-2 border-white px-[60px]">
+    <header className="flex items-center justify-between  py-4 bg-[#000] text-white border-b-2 border-white px-[60px]">
       {/* Left: Logo and Title */}
       <div className="flex items-center space-x-4">
         <img
@@ -17,18 +17,16 @@ const Header = () => {
           alt="University Logo"
           className="w-[16px] h-[16px] object-cover"
         />
-        <span className="font-bold text-lg">University of California, San Francisco</span>
+        <span className="font-bold text-lg">Lecturer's Portfolio</span>
       </div>
 
       {/* Right: Navigation Menu */}
       <div className="hidden md:flex">
         <nav>
           <ul className="flex space-x-8 font-medium">
-            <li className="hover:text-gray-400 cursor-pointer">About</li>
-            <li className="hover:text-gray-400 cursor-pointer">Academics</li>
-            <li className="hover:text-gray-400 cursor-pointer">Admissions</li>
-            <li className="hover:text-gray-400 cursor-pointer">Research</li>
-            <li className="hover:text-gray-400 cursor-pointer">Campus Life</li>
+          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition duration-300">
+          Admin Login
+        </button>
           </ul>
         </nav>
       </div>
@@ -55,14 +53,12 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-[#121417] text-white py-4 px-6">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-[#000] text-white py-4 px-6">
           <nav>
             <ul className="space-y-4">
-              <li className="hover:text-gray-400 cursor-pointer">About</li>
-              <li className="hover:text-gray-400 cursor-pointer">Academics</li>
-              <li className="hover:text-gray-400 cursor-pointer">Admissions</li>
-              <li className="hover:text-gray-400 cursor-pointer">Research</li>
-              <li className="hover:text-gray-400 cursor-pointer">Campus Life</li>
+              <li>
+                <button>Admin Login</button>
+              </li>
             </ul>
           </nav>
         </div>

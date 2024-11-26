@@ -6,7 +6,7 @@ import Pdevelopment from './Pdevelopment';
 
 const Landing = () => {
   return (
-    <div>
+    <div className="bg-[#000]">
         <Header />
         <Hero />
         <Bio />

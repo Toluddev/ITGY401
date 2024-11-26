@@ -2,7 +2,7 @@
 // import { Toaster as Sonner } from "./components/ui/sonner";
 // import { TooltipProvider } from "./components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import Lecturers from "./pages/Lecturers";
 import AssignCourses from "./pages/AssignCourses";
@@ -20,13 +20,15 @@ const App = () => (
       <Sonner /> */}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/welcome" element={<Welcome />} />
+        <Route default path="/login" element={<Welcome />} />
+          <Route path="/signup" element={<Index />} />
           <Route path="/academic" element={<Academic />} />
           <Route path="/landing" element={<Landing />} />
           <Route path="/lecturers" element={<Lecturers />} />
           <Route path="/portal" element={<LecturerPortal />} />
           <Route path="/assign" element={<AssignCourses />} />
+
+          <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </BrowserRouter>
   </QueryClientProvider>

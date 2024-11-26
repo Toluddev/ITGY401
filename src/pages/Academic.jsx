@@ -6,9 +6,9 @@ const Academic = () => {
       navigate("/assign"); 
     };
     return (
-        <div className="min-h-screen flex flex-col bg-[#121417] text-white">
+        <div className="min-h-screen flex flex-col bg-[#000] text-white">
             {/* Header */}
-            <header className="flex items-center justify-between py-4 bg-[#121417] text-white border-b-2 border-white px-4 sm:px-6 md:px-10">
+            <header className="flex items-center justify-between py-4 bg-[#000] text-white border-b-2 border-white px-4 sm:px-6 md:px-10">
                 {/* Left Section: Logo and Title */}
                 <div className="flex items-center space-x-4">
                     <img
@@ -16,15 +16,13 @@ const Academic = () => {
                         alt="Vector"
                         className="w-[16px] h-[16px] object-cover"
                     />
-                    <span className="font-bold text-lg">Academic</span>
+                    <span className="font-bold text-lg">Lecturer's Portfolio</span>
                 </div>
 
                 {/* Right Section: Navigation */}
                 <ul className="hidden sm:flex space-x-6 text-white font-medium">
                     <li className="hover:underline cursor-pointer">Dashboard</li>
                     <li className="hover:underline cursor-pointer">Courses</li>
-                    <li className="hover:underline cursor-pointer">Community</li>
-                    <li className="hover:underline cursor-pointer">Help</li>
                 </ul>
             </header>
 
@@ -76,7 +74,7 @@ const Academic = () => {
                         <button
                             onClick={handleAssign}
                             type="submit"
-                            className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                            className="w-full py-2 px-4 bg-blue-600 text-white rounded-md  focus:ring-2 focus:ring-opacity-50"
                         >
                             Create Course
                         </button>

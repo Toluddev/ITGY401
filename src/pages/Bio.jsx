@@ -1,9 +1,41 @@
 import React from "react";
+import { MoveRight } from "lucide-react";
 
 const Bio = () => {
+    const contactInfo = [
+        {
+          label: "Office Address:",
+          value: "UCSF, 505 Parnassus Ave, Rm M-917, San Francisco, CA 94143",
+          link: "https://www.google.com/maps?q=UCSF,+505+Parnassus+Ave,+Rm+M-917,+San+Francisco,+CA+94143",
+          type: "map"
+        },
+        {
+          label: "Email:",
+          value: "jennifer.smith@ucsf.edu",
+          link: "mailto:jennifer.smith@ucsf.edu",
+          type: "email"
+        },
+        {
+          label: "Phone:",
+          value: "415-476-1234",
+          link: "tel:415-476-1234",
+          type: "phone"
+        },
+        {
+          label: "LinkedIn:",
+          value: "linkedin.com/in/jennifersmith",
+          link: "https://linkedin.com/in/jennifersmith",
+          type: "linkedin"
+        },
+        {
+          label: "Publications:",
+          value: "scholar.google.com/citations?user=12345",
+          link: "https://scholar.google.com/citations?user=12345",
+          type: "publications"
+        }
+      ];
     return (
         <div className="p-6 rounded-lg space-y-8 px-[60px]">
-            {/* Bio Section */}
             <div className="text-left">
                 <h1 className="text-2xl font-bold mb-4">Bio</h1>
                 <h2 className="leading-relaxed">
@@ -11,7 +43,6 @@ const Bio = () => {
                 </h2>
             </div>
 
-            {/* Hobbies Section */}
             <div className="text-left">
                 <h1 className="text-2xl font-bold mb-4">Hobbies</h1>
                 <ul className="flex flex-wrap gap-4">
@@ -22,48 +53,38 @@ const Bio = () => {
                 </ul>
             </div>
 
-            {/* Contact Section */}
-            <div className="text-left">
-                <h1 className="text-2xl font-bold mb-4">Contact</h1>
-                <ul className="space-y-2">
-                    <li className="flex justify-between items-center">
-                        <div>
-                            <strong className="block">Office Address:</strong> UCSF, 505 Parnassus Ave, Rm M-917, San Francisco, CA 94143
-                        </div>
-                        <span className="text-white text-2xl">→</span>
-                    </li>
-                    <li className="flex justify-between items-center">
-                        <div>
-                            <strong className="block">Email:</strong> jennifer.smith@ucsf.edu
-                        </div>
-                        <span className="text-white text-2xl">→</span>
-                    </li>
-                    <li className="flex justify-between items-center">
-                        <div>
-                            <strong className="block">Phone:</strong> 415-476-1234
-                        </div>
-                        <span className="text-white text-2xl">→</span>
-                    </li>
-                    <li className="flex justify-between items-center">
-                        <div>
-                            <strong className="block">LinkedIn:</strong>
-                            <a href="https://linkedin.com/in/jennifersmith" className="text-blue-600 hover:underline">
-                                linkedin.com/in/jennifersmith
-                            </a>
-                        </div>
-                        <span className="text-white text-2xl">→</span>
-                    </li>
-                    <li className="flex justify-between items-center">
-                        <div>
-                            <strong className="block">Publications:</strong>
-                            <a href="https://scholar.google.com/citations?user=12345" className="text-blue-600 hover:underline">
-                                scholar.google.com/citations?user=12345
-                            </a>
-                        </div>
-                        <span className="text-white text-2xl">→</span>
-                    </li>
-                </ul>
-            </div>
+            <div className=" text-white pt-3">
+      <div className="">
+        <h1 className="text-3xl font-bold mb-7">Contact</h1>
+        <div className="space-y-8">
+          {contactInfo.map((info, index) => (
+            <a
+              key={index}
+              href={info.link}
+              target={info.type !== 'email' && info.type !== 'phone' ? '_blank' : undefined}
+              rel={info.type !== 'email' && info.type !== 'phone' ? 'noopener noreferrer' : undefined}
+              className="block group"
+            >
+              <div className="flex items-start justify-between hover:bg-gray-900/50 p-4 rounded-lg transition-all duration-300">
+                <div className="space-y-2">
+                  <h2 className="text-lg font-semibold text-gray-400">{info.label}</h2>
+                  <p className="text-lg">
+                    {info.type === 'linkedin' || info.type === 'publications' ? (
+                      <span className="text-blue-400 hover:text-blue-300">{info.value}</span>
+                    ) : (
+                      info.value
+                    )}
+                  </p>
+                </div>
+                <MoveRight
+                 className="w-6 h-6 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" 
+                  />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
         </div>
     );
 };

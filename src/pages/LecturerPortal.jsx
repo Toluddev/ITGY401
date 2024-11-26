@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { ChevronRight, LayoutDashboard, BookOpen, Users, BarChart2, Settings, HelpCircle, Plus } from "lucide-react";
+import { ChevronRight, LayoutDashboard, BookOpen, Users, BarChart2, Settings, HelpCircle, Plus, Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+
 const navItems = [
   { icon: LayoutDashboard, label: "Overview", active: true },
   { icon: BookOpen, label: "Courses" },
@@ -28,57 +29,94 @@ const options = [
 
 const LecturerPortal = () => {
   const [activeNav, setActiveNav] = useState("Overview");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+
   const handleAssign = () => {
-    navigate("/assign"); 
+    navigate("/assign");
   };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const Sidebar = ({ className = "" }) => (
+    <div className={`bg-[#000] p-6 flex flex-col ${className}`}>
+      <h2 className="text-xl font-semibold mb-8">Lecturer's Portal</h2>
+      
+      <nav className="flex-1">
+        {navItems.map((item) => (
+          <button
+            key={item.label}
+            onClick={() => {
+              setActiveNav(item.label);
+              setIsMobileMenuOpen(false);
+            }}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg mb-2 transition-colors ${
+              activeNav === item.label
+                ? "bg-white/10 text-white"
+                : "text-gray-400 hover:bg-white/5"
+            }`}
+          >
+            <item.icon size={20} />
+            {item.label}
+          </button>
+        ))}
+      </nav>
+
+      <button 
+        onClick={handleAssign} 
+        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+      >
+        <Plus size={20} />
+        Add
+      </button>
+
+      <button className="mt-6 flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+        <HelpCircle size={20} />
+        Help & feedback
+      </button>
+    </div>
+  );
+
   return (
-    <div className="min-h-screen bg-[#000] flex">
-      <div className="w-64 bg-[#000] p-6 flex flex-col">
-        <h2 className="text-xl font-semibold mb-8">Lecturer's Portal</h2>
-        
-        <nav className="flex-1">
-          {navItems.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => setActiveNav(item.label)}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg mb-2 transition-colors ${
-                activeNav === item.label
-                  ? "bg-white/10 text-white"
-                  : "text-gray-400 hover:bg-white/5"
-              }`}
-            >
-              <item.icon size={20} />
-              {item.label}
-            </button>
-          ))}
-        </nav>
-
-        <button onClick={handleAssign} className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
-          <Plus size={20} />
-          Add
-        </button>
-
-        <button className="mt-6 flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
-          <HelpCircle size={20} />
-          Help & feedback
+    <div className="min-h-screen bg-[#000] flex flex-col lg:flex-row">
+      <div className="lg:hidden flex items-center justify-between p-4 bg-[#000] border-b border-white/10">
+        <h2 className="text-xl font-semibold">Lecturer's Portal</h2>
+        <button onClick={toggleMobileMenu} className="text-white">
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      <div className="flex-1 p-8">
-        <div className="glass p-8 mb-1">
-          <h1 className="text-3xl font-semibold mb-2">Dr. Jane Smith</h1>
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-50 bg-black">
+          <div className="flex justify-end p-4">
+            <button onClick={toggleMobileMenu}>
+              <X size={24} className="text-white" />
+            </button>
+          </div>
+          <Sidebar />
+        </div>
+      )}
+
+      <div className="hidden lg:block lg:w-64">
+        <Sidebar className="h-screen sticky top-0" />
+      </div>
+
+      <div className="flex-1 p-4 lg:p-8">
+        <div className="glass p-4 lg:p-8 mb-1">
+          <h1 className="text-2xl lg:text-3xl font-semibold mb-2">Dr. Jane Smith</h1>
           <p className="text-gray-400">janesmith@gmail.com</p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6 lg:space-y-8">
           <section>
             <h2 className="text-xl font-semibold mb-4">Assigned courses</h2>
             <div className="space-y-2">
               {courses.map((course) => (
                 <button
                   key={course.id}
-                  className="w-full glass p-4 flex items-center justify-between hover:bg-white/10 transition-colors"
+                  className="w-full glass p-3 lg:p-4 flex items-center justify-between hover:bg-white/10 transition-colors text-sm lg:text-base"
                 >
                   <span>{course.name}</span>
                   <ChevronRight size={20} className="text-gray-400" />
@@ -93,10 +131,10 @@ const LecturerPortal = () => {
               {lectures.map((lecture) => (
                 <button
                   key={lecture.id}
-                  className="w-full glass p-4 flex items-center justify-between hover:bg-white/10 transition-colors"
+                  className="w-full glass p-3 lg:p-4 flex items-center justify-between hover:bg-white/10 transition-colors text-sm lg:text-base"
                 >
-                  <span>{lecture.title}</span>
-                  <ChevronRight size={20} className="text-gray-400" />
+                  <span className="text-left">{lecture.title}</span>
+                  <ChevronRight size={20} className="text-gray-400 flex-shrink-0 ml-2" />
                 </button>
               ))}
             </div>
@@ -108,7 +146,7 @@ const LecturerPortal = () => {
               {options.map((option) => (
                 <button
                   key={option.id}
-                  className="w-full glass p-4 flex items-center justify-between hover:bg-white/10 transition-colors"
+                  className="w-full glass p-3 lg:p-4 flex items-center justify-between hover:bg-white/10 transition-colors text-sm lg:text-base"
                 >
                   <span>{option.label}</span>
                   <ChevronRight size={20} className="text-gray-400" />
