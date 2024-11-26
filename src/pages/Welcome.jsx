@@ -44,15 +44,15 @@ const Welcome = () => {
                         {/* Username Input */}
                         <div>
                             <label
-                                htmlFor="username"
+                                htmlFor="email"
                                 className="block text-lg font-medium text-white"
                             >
-                                Username
+                                Email
                             </label>
                             <input
-                                type="text"
-                                id="username"
-                                placeholder="Enter your username"
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
                                 className="mt-1 block w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                             />
                         </div>
